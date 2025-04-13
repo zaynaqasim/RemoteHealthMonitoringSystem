@@ -56,11 +56,10 @@ Copy
 Edit
 cd path/to/RemoteHealthMonitoringSystem
 Compile the Java files by running the following command:
-
-bash
 Copy
 Edit
 javac *.java
+```bash
 ### 3. Run the Application
 After the code is compiled, you can run the system using the following command:
 
@@ -69,6 +68,7 @@ Copy
 Edit
 java RemoteHealthMonitoringSystem
 This will start the application and present you with the main menu.
+```bash
 
 ### 4. Interact with the System
 The following menu options will be available:
