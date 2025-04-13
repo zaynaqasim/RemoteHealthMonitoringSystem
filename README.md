@@ -47,9 +47,8 @@ Before running the system, ensure that you have the following installed on your 
 
 Clone the repository to your local machine using Git:
 
-```bash
 git clone https://github.com/zaynaqasim/RemoteHealthMonitoringSystem.git
-2. Compile the Code
+### 2. Compile the Code
 Once the project is downloaded, open the terminal (or command prompt) and navigate to the project folder:
 
 bash
@@ -62,7 +61,7 @@ bash
 Copy
 Edit
 javac *.java
-3. Run the Application
+### 3. Run the Application
 After the code is compiled, you can run the system using the following command:
 
 bash
@@ -71,7 +70,7 @@ Edit
 java RemoteHealthMonitoringSystem
 This will start the application and present you with the main menu.
 
-4. Interact with the System
+### 4. Interact with the System
 The following menu options will be available:
 
 plaintext
