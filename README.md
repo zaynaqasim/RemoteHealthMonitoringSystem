@@ -90,11 +90,7 @@ To log in as a doctor, use the doctor’s name and password, which are initially
 Patients can interact with their medical records, vital signs, and doctors as specified.
 
 Directory Structure
-The project is structured as follows:
-
-bash
-Copy
-Edit
+The project is structured as follows:<br>
 /RemoteHealthMonitoringSystem
 ├── Doctor.java                # Doctor-related functionalities
 ├── Patient.java               # Patient-related functionalities
@@ -111,7 +107,8 @@ Edit
 ├── ChatClient.java            # Chat client functionality
 ├── VideoCall.java             # Video call functionality
 ├── RemoteHealthMonitoringSystem.java  # Main program entry point
-└── README.md                 # Documentation file
+└── README.md                 # Documentation file<br>
+
 How to Run the System
 Step 1: Set Up Your Environment
 Install Java 8 or higher on your system.
