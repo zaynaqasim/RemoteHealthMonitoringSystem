@@ -1,103 +1,51 @@
-# RemoteHealthMonitoringSystem
-Remote Health Monitoring System
-This is a console-based application for remote health monitoring, enabling interaction between Patients, Doctors, and Administrators. The system allows for managing appointments, vital sign tracking, medical history, and other functionalities crucial to remote healthcare. The application provides various services like notifications, emergency alerts, video calls, and more.
+# Remote Health Monitoring System
 
->Features
--Patient Management
-  View and update vital signs.
-  View and manage medical history (diagnoses, treatments, prescriptions, consultations).
-  Receive health reminders, alerts, and notifications.
--Doctor Management
-   Provide feedback on patient conditions.
-   Write prescriptions.
-   View medical history and vital signs of patients.
--Administrator Management
-   Add patients and doctors to the system.
-   View system logs of activities.
--Appointment Management
-   Schedule, view, and manage appointments.
--Vital Sign Monitoring
-   Track vital signs (heart rate, oxygen levels, blood pressure, and temperature) of patients.
--Emergency & Panic Alerts
-   Send alerts in case of a medical emergency.
--Communication
-   In-app messaging through a chat system.
-   Video call integration for remote consultations.
+## Overview
 
->Requirements
-Java 8 or higher
+The **Remote Health Monitoring System** is a console-based application designed to manage health-related information for patients, doctors, and administrators. It allows the management of appointments, vital signs, prescriptions, patient records, and system logs.
 
->Classes Overview
-1. Administrator
-Responsible for managing system users (doctors, patients) and viewing system logs.
+The system supports the following roles:
+- **Administrator**: Manages doctors, patients, and logs.
+- **Doctor**: Views patient information, adds feedback, and prescribes medications.
+- **Patient**: Views personal health information and interacts with their doctor.
 
-Methods:
-authenticate(): Validates admin credentials.
-addDoctor(), addPatient(): Adds new users to the system.
-logAction(), viewLogs(): Logs and views administrator actions.
+## Features
 
-2. Doctor
-Represents a doctor in the system with attributes like id, name, email, and password.
+- **Admin Panel**: 
+  - Add new doctors and patients.
+  - View and manage system logs.
+  
+- **Doctor Panel**:
+  - View patient details, medical history, and vital signs.
+  - Provide feedback and prescribe medication.
+  
+- **Patient Panel**:
+  - View and update vital signs and health data.
+  - View appointment history.
+  
+- **Appointment Manager**:
+  - Schedule, view, and manage appointments between doctors and patients.
 
-Methods:
-authenticate(): Verifies doctor's password.
-handle(): Handles doctor-specific functionality (viewing patients, adding prescriptions, etc.).
+- **Vital Sign Monitoring**:
+  - Track and store patient vitals such as heart rate, oxygen levels, blood pressure, and temperature.
 
-3. Patient
-Represents a patient with personal details and medical history.
+- **Reminder and Alert System**:
+  - Set reminders for appointments and receive emergency alerts.
 
-Methods:
-handle(): Handles patient-specific functionality (viewing vital signs, history, etc.).
+## Prerequisites
 
-4. AppointmentManager
-Manages appointments between patients and doctors.
+Before running the system, ensure that you have the following installed on your machine:
 
-Methods:
-scheduleAppointment(), viewAppointments(), handle(): Scheduling and managing appointments.
+- **Java 8 or higher**: The system is built using Java.
+  - You can download Java from the official [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or [OpenJDK](https://openjdk.java.net/).
 
-5. VitalsDatabase & VitalSign
-Manages and stores patient vital signs (heart rate, oxygen level, blood pressure, temperature).
+- **IDE/Text Editor**: Any text editor like **Visual Studio Code**, **Sublime Text**, or an IDE like **IntelliJ IDEA** or **Eclipse** will work.
 
-Methods:
-addVital(), displayVitals(): Adding and displaying vital signs.
+## Getting Started
 
-6. MedicalHistory
-Stores the patient's medical history, including diagnoses, treatments, prescriptions, and consultations.
+### 1. Clone the Repository
 
-Methods:
-addDiagnosis(), addTreatment(), addPrescription(), displayHistory(): Manage medical history.
+Clone the repository to your local machine using Git:
 
-7. EmergencyAlert, PanicButton, ReminderService
-Handle emergency situations, panic alerts, and health reminders via notifications (Email/SMS).
-
-Methods:
-sendAlert(), sendReminder(): Send alerts and reminders to the user.
-
-8. ChatServer, ChatClient, VideoCall
-Provide communication services between the patient and doctor via chat and video call.
-
-How to Run the Application
-
-The system will present a menu, allowing you to interact with different functionalities. The available roles and options are:
-Admin Menu:
-Log in with the admin credentials (username: admin, password: admin123).
-Add new Doctors and Patients.
-View System Logs of all actions performed by the admin.
-
-Doctor Menu:
-Enter doctor credentials to log in.
-View and update Patient Information and Medical History.
-Write Prescriptions for patients.
-Provide Feedback for patient conditions.
-
-Patient Menu:
-Enter Patient ID to view and update personal information.
-View Vital Signs such as heart rate, oxygen level, blood pressure, and temperature.
-Manage Appointments with doctors.
-
-Appointment Manager:
-Schedule, view, and manage appointments between doctors and patients.
-
-
-
-
+```bash
+git clone https://github.com/your-repo/RemoteHealthMonitoringSystem.git
