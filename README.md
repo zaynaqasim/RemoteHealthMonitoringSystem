@@ -27,8 +27,6 @@ This is a console-based application for remote health monitoring, enabling inter
 >Requirements
 Java 8 or higher
 
-
-
 >Classes Overview
 1. Administrator
 Responsible for managing system users (doctors, patients) and viewing system logs.
