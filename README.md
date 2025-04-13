@@ -50,24 +50,24 @@ Clone the repository to your local machine using Git:
 git clone https://github.com/zaynaqasim/RemoteHealthMonitoringSystem.git
 ### 2. Compile the Code
 Once the project is downloaded, open the terminal (or command prompt) and navigate to the project folder:
-cd path/to/RemoteHealthMonitoringSystem
-Compile the Java files by running the following command:
+cd path/to/RemoteHealthMonitoringSystem<br>
+Compile the Java files by running the following command:<br>
 javac *.java
 
 ### 3. Run the Application
-After the code is compiled, you can run the system using the following command:
-java RemoteHealthMonitoringSystem
+After the code is compiled, you can run the system using the following command:<br>
+java RemoteHealthMonitoringSystem<br>
 This will start the application and present you with the main menu.
 
 ### 4. Interact with the System
-The following menu options will be available:
+The following menu options will be available:<br>
 
-=== Remote Health Monitoring ===
-[1] Patient
-[2] Doctor
-[3] Admin
-[4] Appointment Manager
-[0] Exit
+=== Remote Health Monitoring ===<br>
+[1] Patient <br>
+[2] Doctor <br>
+[3] Admin <br>
+[4] Appointment Manager <br>
+[0] Exit <br>
 Patient: Choose option [1] to log in as a patient.
 
 Doctor: Choose option [2] to log in as a doctor.
