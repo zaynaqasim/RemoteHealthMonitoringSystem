@@ -68,15 +68,15 @@ The following menu options will be available:<br>
 [3] Admin <br>
 [4] Appointment Manager <br>
 [0] Exit <br>
-Patient: Choose option [1] to log in as a patient.
+Patient: Choose option [1] to log in as a patient.<br>
 
-Doctor: Choose option [2] to log in as a doctor.
+Doctor: Choose option [2] to log in as a doctor.<br>
 
-Admin: Choose option [3] to log in as an administrator (use admin / admin123 credentials).
+Admin: Choose option [3] to log in as an administrator (use admin / admin123 credentials).<br>
 
-Appointment Manager: Choose option [4] to manage appointments.
+Appointment Manager: Choose option [4] to manage appointments.<br>
 
-5. Admin Login
+5. Admin Login<br>
 To log in as an administrator, use the following default credentials:
 
 Username: admin
@@ -91,27 +91,27 @@ Patients can interact with their medical records, vital signs, and doctors as sp
 
 Directory Structure
 The project is structured as follows:<br>
-/RemoteHealthMonitoringSystem
-├── Doctor.java                # Doctor-related functionalities
-├── Patient.java               # Patient-related functionalities
-├── Administrator.java         # Admin-related functionalities
-├── VitalSign.java             # Vital sign tracking
-├── Feedback.java              # Doctor's feedback
-├── Prescription.java          # Prescription management
-├── MedicalHistory.java        # Medical history for patients
-├── AppointmentManager.java    # Appointment scheduling and management
-├── ReminderService.java       # Reminder and notification management
-├── EmergencyAlert.java        # Emergency alert system
-├── PanicButton.java           # Panic button functionality
-├── ChatServer.java            # Chat server functionality
-├── ChatClient.java            # Chat client functionality
-├── VideoCall.java             # Video call functionality
-├── RemoteHealthMonitoringSystem.java  # Main program entry point
+/RemoteHealthMonitoringSystem<br>
+├── Doctor.java                # Doctor-related functionalities<br>
+├── Patient.java               # Patient-related functionalities<br>
+├── Administrator.java         # Admin-related functionalities<br>
+├── VitalSign.java             # Vital sign tracking<br>
+├── Feedback.java              # Doctor's feedback<br>
+├── Prescription.java          # Prescription management<br>
+├── MedicalHistory.java        # Medical history for patients<br>
+├── AppointmentManager.java    # Appointment scheduling and management<br>
+├── ReminderService.java       # Reminder and notification management<br>
+├── EmergencyAlert.java        # Emergency alert system<br>
+├── PanicButton.java           # Panic button functionality<br>
+├── ChatServer.java            # Chat server functionality<br>
+├── ChatClient.java            # Chat client functionality<br>
+├── VideoCall.java             # Video call functionality<br>
+├── RemoteHealthMonitoringSystem.java  # Main program entry point<br>
 └── README.md                 # Documentation file<br>
 
-How to Run the System
-Step 1: Set Up Your Environment
-Install Java 8 or higher on your system.
+How to Run the System<br>
+Step 1: Set Up Your Environment<br>
+Install Java 8 or higher on your system.<br>
 
 Use a text editor or IDE to edit and manage the code.
 
