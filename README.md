@@ -156,25 +156,3 @@ Admin can add doctors and patients and view logs.
 Doctor can manage prescriptions and provide feedback.
 
 Patient can view and update their vital signs and health information.
-
-Troubleshooting
-Java Compilation Issues:
-If you encounter errors during compilation, make sure all Java files are present in the folder and there are no syntax errors in the code.
-
-Login Problems:
-Ensure that you're using the correct credentials for each role:
-
-Admin: admin / admin123
-
-Doctor: Names and passwords set in the system.
-
-Patient: Patient ID provided in the system.
-
-Missing Dependencies:
-If you have any issues regarding dependencies or libraries, make sure all the required files are in the correct directory and properly compiled.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contributing
-Contributions to this project are welcome! If you find any bugs or have suggestions for improvements, feel free to fork the repository, create a new branch, and submit a pull request.
