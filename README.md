@@ -7,25 +7,19 @@ This is a console-based application for remote health monitoring, enabling inter
   View and update vital signs.
   View and manage medical history (diagnoses, treatments, prescriptions, consultations).
   Receive health reminders, alerts, and notifications.
-
 -Doctor Management
    Provide feedback on patient conditions.
    Write prescriptions.
    View medical history and vital signs of patients.
-
 -Administrator Management
    Add patients and doctors to the system.
    View system logs of activities.
-
 -Appointment Management
    Schedule, view, and manage appointments.
-
 -Vital Sign Monitoring
    Track vital signs (heart rate, oxygen levels, blood pressure, and temperature) of patients.
-
 -Emergency & Panic Alerts
    Send alerts in case of a medical emergency.
-
 -Communication
    In-app messaging through a chat system.
    Video call integration for remote consultations.
