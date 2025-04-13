@@ -48,4 +48,133 @@ Before running the system, ensure that you have the following installed on your 
 Clone the repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/your-repo/RemoteHealthMonitoringSystem.git
+git clone https://github.com/zaynaqasim/RemoteHealthMonitoringSystem.git
+2. Compile the Code
+Once the project is downloaded, open the terminal (or command prompt) and navigate to the project folder:
+
+bash
+Copy
+Edit
+cd path/to/RemoteHealthMonitoringSystem
+Compile the Java files by running the following command:
+
+bash
+Copy
+Edit
+javac *.java
+3. Run the Application
+After the code is compiled, you can run the system using the following command:
+
+bash
+Copy
+Edit
+java RemoteHealthMonitoringSystem
+This will start the application and present you with the main menu.
+
+4. Interact with the System
+The following menu options will be available:
+
+plaintext
+Copy
+Edit
+=== Remote Health Monitoring ===
+[1] Patient
+[2] Doctor
+[3] Admin
+[4] Appointment Manager
+[0] Exit
+Patient: Choose option [1] to log in as a patient.
+
+Doctor: Choose option [2] to log in as a doctor.
+
+Admin: Choose option [3] to log in as an administrator (use admin / admin123 credentials).
+
+Appointment Manager: Choose option [4] to manage appointments.
+
+5. Admin Login
+To log in as an administrator, use the following default credentials:
+
+Username: admin
+
+Password: admin123
+
+6. Doctor Login
+To log in as a doctor, use the doctor’s name and password, which are initially set in the code.
+
+7. Patient Interaction
+Patients can interact with their medical records, vital signs, and doctors as specified.
+
+Directory Structure
+The project is structured as follows:
+
+bash
+Copy
+Edit
+/RemoteHealthMonitoringSystem
+├── Doctor.java                # Doctor-related functionalities
+├── Patient.java               # Patient-related functionalities
+├── Administrator.java         # Admin-related functionalities
+├── VitalSign.java             # Vital sign tracking
+├── Feedback.java              # Doctor's feedback
+├── Prescription.java          # Prescription management
+├── MedicalHistory.java        # Medical history for patients
+├── AppointmentManager.java    # Appointment scheduling and management
+├── ReminderService.java       # Reminder and notification management
+├── EmergencyAlert.java        # Emergency alert system
+├── PanicButton.java           # Panic button functionality
+├── ChatServer.java            # Chat server functionality
+├── ChatClient.java            # Chat client functionality
+├── VideoCall.java             # Video call functionality
+├── RemoteHealthMonitoringSystem.java  # Main program entry point
+└── README.md                 # Documentation file
+How to Run the System
+Step 1: Set Up Your Environment
+Install Java 8 or higher on your system.
+
+Use a text editor or IDE to edit and manage the code.
+
+Step 2: Compile and Run the Code
+Clone the repository or download the ZIP file.
+
+Compile all .java files in the project folder using:
+
+bash
+Copy
+Edit
+javac *.java
+Run the system using:
+
+bash
+Copy
+Edit
+java RemoteHealthMonitoringSystem
+Step 3: Interact with the System
+Follow the prompts and choose options for the respective role:
+
+Admin can add doctors and patients and view logs.
+
+Doctor can manage prescriptions and provide feedback.
+
+Patient can view and update their vital signs and health information.
+
+Troubleshooting
+Java Compilation Issues:
+If you encounter errors during compilation, make sure all Java files are present in the folder and there are no syntax errors in the code.
+
+Login Problems:
+Ensure that you're using the correct credentials for each role:
+
+Admin: admin / admin123
+
+Doctor: Names and passwords set in the system.
+
+Patient: Patient ID provided in the system.
+
+Missing Dependencies:
+If you have any issues regarding dependencies or libraries, make sure all the required files are in the correct directory and properly compiled.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contributing
+Contributions to this project are welcome! If you find any bugs or have suggestions for improvements, feel free to fork the repository, create a new branch, and submit a pull request.
