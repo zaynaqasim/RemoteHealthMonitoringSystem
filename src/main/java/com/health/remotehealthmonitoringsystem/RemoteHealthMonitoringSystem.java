@@ -775,8 +775,6 @@ class MedicalHistory {
 }
 
 }
-
-
 // ===== Main System =====
 public class RemoteHealthMonitoringSystem {
     public static void main(String[] args) {
@@ -789,7 +787,6 @@ public class RemoteHealthMonitoringSystem {
 
         doctors.add(new Doctor("D001", "Dr. Naeem", "naeem@gmail.com", "doc1"));
         doctors.add(new Doctor("D002", "Dr. Qazi", "qazi@gmail.com", "doc2"));
-        patients.add(new Patient("P001", "Zayna Qasim", "zaynaqasim@gmail.com"));
 
         ReminderService reminderService = new ReminderService(new EmailNotification(), new SMSNotification());
         EmergencyAlert emergencyAlert = new EmergencyAlert();
