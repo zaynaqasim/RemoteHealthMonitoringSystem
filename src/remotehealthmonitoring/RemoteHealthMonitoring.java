@@ -11,7 +11,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import io.github.cdimascio.dotenv.Dotenv;
 
-// ===================== Notification Services =====================
+// ===================== Notification Services ================
 interface NotificationService {
     void sendNotification(String to, String message);
 }
