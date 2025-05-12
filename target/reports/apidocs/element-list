@@ -1,0 +1,7 @@
+com.remotehealth.app
+com.remotehealth.app.communication
+com.remotehealth.app.gui
+com.remotehealth.app.model
+com.remotehealth.app.service
+com.remotehealth.app.utils
+com.remotehealth.visualization

@@ -1,0 +1,75 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/Lenovo/.m2/repository/com/twilio/sdk/twilio/9.11.0/twilio-9.11.0.jar;C:/Users/Lenovo/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar;C:/Users/Lenovo/.m2/repository/commons-io/commons-io/2.7/commons-io-2.7.jar;C:/Users/Lenovo/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.2/jjwt-api-0.11.2.jar;C:/Users/Lenovo/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.2/jjwt-jackson-0.11.2.jar;C:/Users/Lenovo/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar;C:/Users/Lenovo/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar;C:/Users/Lenovo/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar;C:/Users/Lenovo/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.0/jackson-core-2.14.0.jar;C:/Users/Lenovo/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.0/jackson-annotations-2.14.0.jar;C:/Users/Lenovo/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.0/jackson-databind-2.14.0.jar;C:/Users/Lenovo/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.14.0/jackson-datatype-jsr310-2.14.0.jar;C:/Users/Lenovo/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.14.0/jackson-dataformat-xml-2.14.0.jar;C:/Users/Lenovo/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar;C:/Users/Lenovo/.m2/repository/com/fasterxml/woodstox/woodstox-core/6.4.0/woodstox-core-6.4.0.jar;C:/Users/Lenovo/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar;C:/Users/Lenovo/.m2/repository/org/slf4j/slf4j-simple/2.0.9/slf4j-simple-2.0.9.jar;C:/Users/Lenovo/.m2/repository/com/sun/mail/jakarta.mail/2.0.1/jakarta.mail-2.0.1.jar;C:/Users/Lenovo/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar;C:/Users/Lenovo/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.1/jakarta.activation-api-2.1.1.jar;C:/Users/Lenovo/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar;C:/Users/Lenovo/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar;C:/Users/Lenovo/.m2/repository/org/jfree/jfreechart/1.5.3/jfreechart-1.5.3.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+23
+-sourcepath
+'C:/Users/Lenovo/Downloads/RemoteHealthSystem (2)/RemoteHealthSystem/RemoteHealthMonitoringSystemProject/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Lenovo/Downloads/RemoteHealthSystem (2)/RemoteHealthSystem/RemoteHealthMonitoringSystemProject/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'RemoteHealthMonitoringSystem 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'RemoteHealthMonitoringSystem 1.0-SNAPSHOT API'
+com.remotehealth.app.communication
+com.remotehealth.app.gui
+com.remotehealth.app.model
+com.remotehealth.app
+com.remotehealth.app.service
+com.remotehealth.app.utils
+com.remotehealth.visualization
+C:\Users\Lenovo\.m2\repository\com\twilio\sdk\twilio\9.11.0\twilio-9.11.0.jar = 1745816957391
+C:\Users\Lenovo\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar = 1745816957611
+C:\Users\Lenovo\.m2\repository\commons-io\commons-io\2.7\commons-io-2.7.jar = 1745816958164
+C:\Users\Lenovo\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.2\jjwt-api-0.11.2.jar = 1745816958043
+C:\Users\Lenovo\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.2\jjwt-jackson-0.11.2.jar = 1745816957858
+C:\Users\Lenovo\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar = 1745816957886
+C:\Users\Lenovo\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar = 1745816958109
+C:\Users\Lenovo\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar = 1745816958053
+C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.14.0\jackson-core-2.14.0.jar = 1745816958462
+C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.14.0\jackson-annotations-2.14.0.jar = 1745816958171
+C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.14.0\jackson-databind-2.14.0.jar = 1745816959115
+C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.14.0\jackson-datatype-jsr310-2.14.0.jar = 1745816958337
+C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-xml\2.14.0\jackson-dataformat-xml-2.14.0.jar = 1745816958319
+C:\Users\Lenovo\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.1\stax2-api-4.2.1.jar = 1745816958337
+C:\Users\Lenovo\.m2\repository\com\fasterxml\woodstox\woodstox-core\6.4.0\woodstox-core-6.4.0.jar = 1745816958848
+C:\Users\Lenovo\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar = 1745816958471
+C:\Users\Lenovo\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar = 1745816958458
+C:\Users\Lenovo\.m2\repository\com\sun\mail\jakarta.mail\2.0.1\jakarta.mail-2.0.1.jar = 1745132471637
+C:\Users\Lenovo\.m2\repository\com\sun\activation\jakarta.activation\2.0.1\jakarta.activation-2.0.1.jar = 1745132471810
+C:\Users\Lenovo\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.1\jakarta.activation-api-2.1.1.jar = 1745816958752
+C:\Users\Lenovo\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar = 1746806432367
+C:\Users\Lenovo\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar = 1746806432959
+C:\Users\Lenovo\.m2\repository\org\jfree\jfreechart\1.5.3\jfreechart-1.5.3.jar = 1746978582244
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\src\main\java = 1746978432017
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\allclasses-index.html = 1747025870457
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\allpackages-index.html = 1747025870461
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\constant-values.html = 1747025870138
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\element-list = 1747025870015
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\help-doc.html = 1747025870516
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\index-all.html = 1747025870501
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\index.html = 1747025870430
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\member-search-index.js = 1747025870470
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\module-search-index.js = 1747025870463
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\overview-summary.html = 1747025870510
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\overview-tree.html = 1747025870424
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\package-search-index.js = 1747025870465
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\search.html = 1747025870506
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\serialized-form.html = 1747025870173
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\tag-search-index.js = 1747025870472
+C:\Users\Lenovo\Downloads\RemoteHealthSystem (2)\RemoteHealthSystem\RemoteHealthMonitoringSystemProject\target\reports\apidocs\type-search-index.js = 1747025870468

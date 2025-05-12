@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.remotehealth.app"},{"l":"com.remotehealth.app.communication"},{"l":"com.remotehealth.app.gui"},{"l":"com.remotehealth.app.model"},{"l":"com.remotehealth.app.service"},{"l":"com.remotehealth.app.utils"},{"l":"com.remotehealth.visualization"}];updateSearchResults();
