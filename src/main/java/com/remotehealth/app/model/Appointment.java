@@ -9,6 +9,7 @@
 package com.remotehealth.app.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Appointment {
     // Appointment details
@@ -25,6 +26,9 @@ public class Appointment {
      * @param doctor Doctor conducting
      */
     public Appointment(LocalDateTime dateTime, Patient patient, Doctor doctor) {
+        if (dateTime == null || patient == null || doctor == null) {
+            throw new IllegalArgumentException("Appointment cannot have null fields");
+        }
         this.dateTime = dateTime;
         this.patient = patient;
         this.doctor = doctor;
@@ -93,10 +97,13 @@ public class Appointment {
      */
     @Override
     public String toString() {
-        return String.format("Appointment with Dr. %s\nDate: %s\nTime: %s\nStatus: %s",
-                doctor.getName(),
-                dateTime.toLocalDate(),
-                dateTime.toLocalTime(),
-                status);
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+    
+    return String.format("Appointment with Dr. %s\nDate: %s\nTime: %s\nStatus: %s",
+        doctor.getName(),
+        dateTime.format(dateFormatter),
+        dateTime.format(timeFormatter),
+        status);
     }
 }

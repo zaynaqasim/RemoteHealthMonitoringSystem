@@ -267,15 +267,18 @@ public class DatabaseManager {
      * @param appointment The appointment to save
      */
     public void saveAppointment(Appointment appointment) {
-        String sql = "INSERT INTO appointments (appointmentDate, doctorName, patientID, status) VALUES (?, ?, ?, ?)";
-        try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
-            ps.setString(1, appointment.getDate());
-            ps.setString(2, appointment.getDoctor().getName());
-            ps.setString(3, appointment.getPatient().getId());
-            ps.setString(4, appointment.getStatus());
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try (Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(
+                "INSERT INTO appointments (patient_id, doctor_id, date_time, status) VALUES (?, ?, ?, ?)")) {
+        
+            stmt.setString(1, appointment.getPatient().getId());
+            stmt.setString(2, appointment.getDoctor().getId());
+            // Use Timestamp.valueOf() to properly store both date and time
+            stmt.setTimestamp(3, Timestamp.valueOf(appointment.getDateTime()));
+            stmt.setString(4, appointment.getStatus());
+            stmt.executeUpdate();
+            } catch (SQLException e) {
+               e.printStackTrace();
         }
     }
 
@@ -287,26 +290,51 @@ public class DatabaseManager {
      */
     public List<Appointment> getAppointmentsForPatient(String patientId) {
         List<Appointment> appointments = new ArrayList<>();
-        String sql = "SELECT appointmentDate, patientID, doctorName FROM appointments WHERE patientID = ?";
-        try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
-            ps.setString(1, patientId);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                // Assuming Doctor and Patient objects need to be fetched
-                Patient patient = getPatientById(rs.getString("patientID"));
-                Doctor doctor = getDoctorById(rs.getString("doctorName")); // Add getDoctorById if not present
-                appointments.add(new Appointment(
-                    rs.getObject("appointmentDate", LocalDateTime.class),
-                    patient,
-                    doctor
-                ));
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(
+                "SELECT a.*, d.name as doctor_name, d.id as doctor_id, " +
+                "d.email as doctor_email, d.specialization " +
+                "FROM appointments a " +
+                "LEFT JOIN doctors d ON a.doctor_id = d.id " +
+                "WHERE a.patient_id = ? AND a.date_time IS NOT NULL")) {
+        
+                stmt.setString(1, patientId);
+                ResultSet rs = stmt.executeQuery();
+        
+                while (rs.next()) {
+                try {
+                    // Parse date/time
+                    LocalDateTime dateTime = rs.getTimestamp("date_time").toLocalDateTime();
+                
+                    // Get doctor (handle null case)
+                    Doctor doctor = null;
+                    if (rs.getString("doctor_id") != null) {
+                        doctor = new Doctor(
+                            rs.getString("doctor_id"),
+                            rs.getString("doctor_name"),
+                            rs.getString("doctor_email"),
+                            rs.getString("specialization")
+                        );
+                    }
+                
+                    // Get patient 
+                    Patient patient = getPatientById(patientId); 
+                
+                    if (dateTime != null && patient != null && doctor != null) {
+                    Appointment appt = new Appointment(dateTime, patient, doctor);
+                    appt.setStatus(rs.getString("status"));
+                    appointments.add(appt);
+                    } else {
+                    System.err.println("Skipping invalid appointment record");
+                    }
+                } catch (Exception e) {
+                System.err.println("Error parsing appointment: " + e.getMessage());
+                }
             }
-            saveLog("Retrieved appointments for patient: " + patientId);
-            return appointments;
         } catch (SQLException e) {
-            saveLog("Error retrieving appointments for patient " + patientId + ": " + e.getMessage());
-            throw new RuntimeException("Failed to retrieve appointments", e);
+             e.printStackTrace();
         }
+        return appointments;
     }
 
     /**
@@ -330,27 +358,57 @@ public class DatabaseManager {
      * @param doctorName The name of the doctor
      * @return List of appointments for the doctor
      */
-    public ArrayList<Appointment> getAppointmentsForDoctor(String doctorName) {
-        ArrayList<Appointment> appointments = new ArrayList<>();
-        String sql = "SELECT * FROM appointments WHERE doctorName = ?";
-        try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
-            ps.setString(1, doctorName);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Patient patient = new Patient(rs.getString("patientId"), "", "");
-                Doctor doctor = new Doctor("", doctorName, "", "");
-                Appointment appointment = new Appointment(
-                    rs.getTimestamp("appointmentDate").toLocalDateTime(),
-                    patient,
-                    doctor
+   public ArrayList<Appointment> getAppointmentsForDoctor(String doctorName) {
+    ArrayList<Appointment> appointments = new ArrayList<>();
+    try (Connection conn = getConnection();
+        PreparedStatement stmt = conn.prepareStatement(
+            "SELECT a.*, p.id as patient_id, p.name as patient_name, p.email as patient_email, " +
+            "d.id as doctor_id, d.name as doctor_name, d.email as doctor_email " +
+            "FROM appointments a " +
+            "JOIN patients p ON a.patient_id = p.id " +
+            "JOIN doctors d ON a.doctor_id = d.id WHERE d.name = ?")) {  
+    
+        stmt.setString(1, doctorName);
+        ResultSet rs = stmt.executeQuery();
+    
+        while (rs.next()) {
+            try {
+                LocalDateTime dateTime = rs.getTimestamp("date_time").toLocalDateTime();
+                Patient patient = new Patient(
+                    rs.getString("patient_id"),
+                    rs.getString("patient_name"),
+                    rs.getString("patient_email")
                 );
-                appointment.setStatus(rs.getString("status"));
-                appointments.add(appointment);
+                Doctor doctor = new Doctor(
+                    rs.getString("doctor_id"),
+                    rs.getString("doctor_name"),
+                    rs.getString("doctor_email"),
+                    "" 
+                );
+                
+                Appointment appt = new Appointment(dateTime, patient, doctor);
+                appt.setStatus(rs.getString("status"));
+                appointments.add(appt);
+            } catch (Exception e) {
+                System.err.println("Error parsing appointment: " + e.getMessage());
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-        return appointments;
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return appointments;
+}
+    
+    
+    public void cleanInvalidAppointments() {
+    try (Connection conn = getConnection();
+         Statement stmt = conn.createStatement()) {
+        // Delete appointments with null doctor or date
+        stmt.executeUpdate(
+            "DELETE FROM appointments WHERE doctor_id IS NULL OR date_time IS NULL");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     }
 
     // ===================== VITAL SIGNS OPERATIONS =====================

@@ -37,13 +37,18 @@ public class AppointmentManager {
      * @param appointment The appointment to request
      */
     public void requestAppointment(Appointment appointment) {
-        if (hasConflict(appointment, null)) {
-            System.out.println("[ERROR] Appointment conflict detected.");
-        } else {
-            appointment.setStatus("Pending"); // Ensure status is set
-            dbManager.saveAppointment(appointment);
-            System.out.println("[INFO] Appointment requested successfully for " + appointment.getPatient().getName());
+        // First validate the appointment
+        if (appointment.getDoctor() == null || appointment.getPatient() == null) {
+            throw new IllegalArgumentException("Appointment must have both doctor and patient");
         }
+    
+        if (hasConflict(appointment, null)) {
+           System.out.println("[ERROR] Appointment conflict detected.");
+        } else {
+           appointment.setStatus("Pending");
+           dbManager.saveAppointment(appointment);
+           System.out.println("[INFO] Appointment requested successfully for " + appointment.getPatient().getName());
+       }
     }
 
     /**
@@ -81,6 +86,9 @@ public class AppointmentManager {
      * @return true if a conflict exists
      */
     private boolean hasConflict(Appointment newAppt, Appointment toExclude) {
+        if (newAppt.getDoctor() == null) {
+        return false; 
+        }
         ArrayList<Appointment> doctorAppointments = dbManager.getAppointmentsForDoctor(newAppt.getDoctor().getName());
         
         for (Appointment existing : doctorAppointments) {

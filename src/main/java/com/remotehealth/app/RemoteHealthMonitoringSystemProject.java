@@ -51,7 +51,7 @@ public class RemoteHealthMonitoringSystemProject {
         Connection conn = null;
         try {
             // Establish connection to the MySQL hospital database
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "Imty12");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "zayna2412");
             DatabaseManager dbManager = new DatabaseManager(conn);
             System.out.println("Database connected successfully!");
 
@@ -79,6 +79,8 @@ public class RemoteHealthMonitoringSystemProject {
             // Create and store sample patient if not already present
             Patient patient1 = new Patient("P001", "Zayna Qasim", "zaynaqasim@gmail.com", "patient12345");
             if (dbManager.getPatientById(patient1.getId()) == null) dbManager.savePatient(patient1);
+            
+            dbManager.cleanInvalidAppointments();
 
             // Fetch all available doctors and patients
             ArrayList<Doctor> doctors = dbManager.getAllDoctors();

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import java.awt.Dimension;
+import java.io.File;
 
 public class PatientDashboard extends JFrame {
     // Patient data and services
@@ -209,6 +210,7 @@ public class PatientDashboard extends JFrame {
         createVitalsChartTab();
         createEmergencyTab();
         createPrescriptionsTab();
+        createPatientReportTab();
         
         add(tabbedPane, BorderLayout.CENTER);
         
@@ -473,9 +475,15 @@ public class PatientDashboard extends JFrame {
                 // Parse and validate input
                 String dateStr = dateField.getText();
                 String timeStr = timeField.getText(); 
-                LocalDateTime dateTime = LocalDateTime.parse(dateStr + " " + timeStr, 
-                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                LocalDateTime dateTime = LocalDateTime.parse(
+                dateStr + "T" + timeStr,  // Using ISO format with 'T' separator
+                DateTimeFormatter.ISO_LOCAL_DATE_TIME
+                );
                 Doctor selectedDoctor = (Doctor)doctorCombo.getSelectedItem();
+                if (selectedDoctor == null) {
+                JOptionPane.showMessageDialog(this, "Please select a doctor", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+                }
             
                 // Create and save appointment
                 Appointment appointment = new Appointment(dateTime, patient, selectedDoctor);
@@ -704,6 +712,56 @@ public class PatientDashboard extends JFrame {
     private String colorToHex(Color color) {
         return String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
     }
+    
+        /**
+     * Creates the report generator tab with to generate reports
+     */
+    private void createPatientReportTab() {
+    JPanel reportPanel = new JPanel(new BorderLayout(10, 10));
+    reportPanel.setBackground(UITheme.SECONDARY_COLOR);
+    reportPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+    JLabel reportLabel = new JLabel("Download Your Health Report");
+    reportLabel.setFont(UITheme.HEADER_FONT);
+    reportLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+    JButton downloadReportBtn = UITheme.createPrimaryButton("Download Report");
+    downloadReportBtn.setFont(UITheme.BODY_FONT);
+    downloadReportBtn.setPreferredSize(new Dimension(200, 40));
+    downloadReportBtn.addActionListener(e -> {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Save Patient Report");
+
+        String defaultFileName = "PatientReport_" + patient.getId() + ".pdf";
+        fileChooser.setSelectedFile(new File(defaultFileName));
+
+        int userSelection = fileChooser.showSaveDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+            try {
+                PatientReports.generateReport(patient.getId(), fileToSave.getAbsolutePath(), dbManager);
+                JOptionPane.showMessageDialog(this,
+                    "Patient report saved to:\n" + fileToSave.getAbsolutePath(),
+                    "Report Generated", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this,
+                    "Failed to generate report: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    });
+
+    JPanel centerPanel = new JPanel();
+    centerPanel.setBackground(UITheme.SECONDARY_COLOR);
+    centerPanel.add(downloadReportBtn);
+
+    reportPanel.add(reportLabel, BorderLayout.NORTH);
+    reportPanel.add(centerPanel, BorderLayout.CENTER);
+
+    tabbedPane.addTab("Reports", reportPanel);
+}
     
     /**
      * Creates the prescriptions management tab with list and details view.
