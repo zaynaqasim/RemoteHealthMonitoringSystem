@@ -77,3 +77,25 @@ RemoteHealthMonitoringSystemProject/
    ```bash
    git clone https://github.com/your-username/RemoteHealthMonitoringSystem.git
    cd RemoteHealthMonitoringSystem
+Configure environment variables:
+
+Update the .env file with:
+GMAIL_API_KEY=your-api-key
+GMAIL_SENDER_ADDRESS=your-email@gmail.com
+
+Build the project with Maven:
+mvn clean install
+
+Run the application:
+mvn exec:java -Dexec.mainClass="com.remotehealth.app.RemoteHealthMonitoringSystemProject"
+
+📈 Future Extensions
+Database integration using MySQL
+
+Real-time video consultation using WebRTC or Jitsi
+
+Role-based access control and audit logs
+
+Mobile application (Android/iOS)
+
+Health analytics dashboard using charting libraries
