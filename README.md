@@ -87,13 +87,11 @@ EMAIL_USERNAME=your_email@gmail.com
 EMAIL_PASSWORD=your_email_app_password
 
 Build the Project
-
-bash
 mvn clean install
-Run the Application
 
-bash
+Run the Application
 mvn exec:java
+
 Maven Dependencies
 xml
 <!-- Twilio (SMS alerts) -->
