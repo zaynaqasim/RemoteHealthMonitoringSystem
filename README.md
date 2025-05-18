@@ -62,17 +62,22 @@ mvn -version
 Setup Instructions
 Follow these steps to set up and run the Remote Health Monitoring System (RHMS) on your local machine:
 
-1. Clone the Repository
+Clone the Repository
+
+bash
 git clone https://github.com/your-username/RemoteHealthMonitoringSystem.git
 cd RemoteHealthMonitoringSystem
+Configure MySQL Database
 
-2.Configure MySQL Database
 Open MySQL Workbench or your preferred client
+
 Create a new database:
+
+sql
 CREATE DATABASE rhms_db;
 Paste the database schema into it
 
-3. Create .env File
+Create .env File
 Create a file named .env in the root folder with:
 
 DB_URL=jdbc:mysql://localhost:3306/rhms_db
@@ -85,13 +90,14 @@ TWILIO_PHONE_NUMBER=your_twilio_phone
 
 EMAIL_USERNAME=your_email@gmail.com
 EMAIL_PASSWORD=your_email_app_password
-
 Build the Project
+
+bash
 mvn clean install
-
 Run the Application
-mvn exec:java
 
+bash
+mvn exec:java
 Maven Dependencies
 xml
 <!-- Twilio (SMS alerts) -->
