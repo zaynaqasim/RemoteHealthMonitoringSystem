@@ -1,101 +1,164 @@
-# Remote Health Monitoring System
+# 🏥 Remote Health Monitoring System (RHMS)
 
-A full-featured Java-based desktop application designed to facilitate remote healthcare management. The system supports real-time communication, medical data monitoring, and administrative tools for doctors, patients, and administrators.
+The **Remote Health Monitoring System (RHMS)** is a Java-based desktop application designed to provide remote healthcare support for patients and doctors. It features patient monitoring, appointment scheduling, emergency alerts, and doctor feedback—all managed through a user-friendly graphical interface.
 
-## 🩺 Project Overview
+---
 
-The **Remote Health Monitoring System** enables doctors and patients to interact digitally while providing core functionality like:
+## 🎥 Project Demo
 
-- Appointment scheduling and management
-- Health data and vitals tracking
-- Medical history and prescription handling
-- Doctor-patient feedback system
-- Admin dashboards for system control
-- Video call module (placeholder for future integration)
-- Reminder services via email
-- Secure login system with password recovery
+📽️ [Click here to watch the demo video](https://drive.google.com/file/d/1_Z4883-4bn7Wy5HUKeP1XtepVf2mCoUE/view?usp=sharing)
 
-## 📁 Project Structure
+---
 
-RemoteHealthMonitoringSystemProject/
-├── .env # Environment variables
-├── pom.xml # Maven dependencies
-├── src/
-│ └── main/
-│ └── java/
-│ └── com/remotehealth/app/
-│ ├── RemoteHealthMonitoringSystemProject.java # Main class
-│ ├── communication/VideoCall.java # Placeholder for video calls
-│ ├── gui/ # Swing UI screens
-│ │ ├── LoginScreen.java
-│ │ ├── PatientDashboard.java
-│ │ ├── AdminDashboard.java
-│ │ └── ...
-│ └── model/ # Core business logic
-│ ├── Doctor.java
-│ ├── Patient.java
-│ ├── Appointment.java
-│ ├── Prescription.java
-│ ├── Feedback.java
-│ └── ...
+## 🖼️ GUI Screenshot
 
+> Replace this placeholder with your actual image after uploading it to your GitHub repo.
 
-## ⚙️ Technologies Used
+![GUI Screenshot](gui-screenshot.png)
 
-- **Java** (JDK 17+)
-- **Swing** for GUI development
-- **Maven** for dependency management
-- **Gmail API** for email alerts and reminders
-- **MySQL** (to be integrated for persistent data storage)
+---
 
-## 🔐 Features
+## 💡 Features
 
-| Feature                          | Description |
-|----------------------------------|-------------|
-| 🧑‍⚕️ Doctor Dashboard           | View appointments, feedback, prescribe medicines |
-| 👩‍⚕️ Patient Dashboard          | View vitals, upcoming appointments, and medical history |
-| 🗓️ Appointment Management        | Schedule and track patient-doctor sessions |
-| 💊 Prescription Handling         | Doctors can issue prescriptions and attach them to patient profiles |
-| 📬 Email Reminders               | Email notifications for appointments and prescriptions |
-| 🔒 Login & Forgot Password       | Authentication and password reset functionality |
-| 📹 Video Call (Prototype)        | Framework for future video call integration |
-| 📊 Admin Dashboard               | Full control over users, logs, and feedback |
+- Patient and Doctor Login
+- Vital Signs Tracking with Live Chart
+- Appointment Scheduling and Approval
+- Medical History & Feedback View
+- Emergency Alerts via SMS & Email
+- PDF Prescription Generator
+- Reminder and Notification Services
+- Modular Design using Java OOP Principles
 
-## 🛠️ Setup Instructions
+---
 
-### Prerequisites
+## 🧑‍💻 Technologies Used
 
-- JDK 17 or higher
+- Java (JDK 17+)
 - Maven
-- (Optional) MySQL Server (for database persistence)
-- Internet access for Gmail API email integration
+- Swing GUI
+- MySQL Database
+- Twilio API (SMS Alerts)
+- Jakarta Mail API (Email Notifications)
+- JFreeChart (Vitals Visualization)
+- Apache PDFBox (PDF Prescriptions)
+- dotenv-java (Environment Variables)
 
-### Installation
+---
 
-1. **Clone or unzip the repository:**
+## Installation Guide
 
-   ```bash
-   git clone https://github.com/your-username/RemoteHealthMonitoringSystem.git
-   cd RemoteHealthMonitoringSystem
-Configure environment variables:
+This guide is beginner-friendly and intended for students in Grades 10–12.
 
-Update the .env file with:
-GMAIL_API_KEY=your-api-key
-GMAIL_SENDER_ADDRESS=your-email@gmail.com
+### ✅ Prerequisites
 
-Build the project with Maven:
+Make sure the following are installed:
+
+- [Java JDK 17 or later](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Apache Maven](https://maven.apache.org/download.cgi)
+- [MySQL Server](https://dev.mysql.com/downloads/mysql/)
+
+Verify installation:
+java -version
+mvn -version
+
+### Setup Instructions
+Follow these steps to set up and run the Remote Health Monitoring System (RHMS) on your local machine:
+
+1. Clone the Repository
+Open your terminal or command prompt and run:
+git clone https://github.com/your-username/RemoteHealthMonitoringSystem.git
+cd RemoteHealthMonitoringSystem
+2. Configure MySQL Database
+Open MySQL Workbench or your preferred client.
+Create a new database, for example:
+CREATE DATABASE rhms_db;
+Create required tables and insert test data (refer to your database schema if needed).
+
+3. Create .env File
+Create a file named .env in the root folder and add your configuration:
+
+DB_URL=jdbc:mysql://localhost:3306/rhms_db
+DB_USERNAME=root
+DB_PASSWORD=your_password
+
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+TWILIO_PHONE_NUMBER=your_twilio_phone
+
+EMAIL_USERNAME=your_email@gmail.com
+EMAIL_PASSWORD=your_email_app_password
+⚠️ Make sure not to share or upload this .env file to GitHub. It contains sensitive credentials.
+
+4.  Build the Project
+Use Maven to clean and install dependencies:
 mvn clean install
 
-Run the application:
-mvn exec:java -Dexec.mainClass="com.remotehealth.app.RemoteHealthMonitoringSystemProject"
+6.  Run the Application
+Execute the main class using Maven:
+mvn exec:java
 
-📈 Future Extensions
-Database integration using MySQL
+### Maven Dependencies
+The project uses the following Maven dependencies:
 
-Real-time video consultation using WebRTC or Jitsi
+<!-- Twilio -->
+<dependency>
+  <groupId>com.twilio.sdk</groupId>
+  <artifactId>twilio</artifactId>
+  <version>9.11.0</version>
+</dependency>
 
-Role-based access control and audit logs
+<!-- SLF4J Logging -->
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-simple</artifactId>
+  <version>2.0.9</version>
+</dependency>
 
-Mobile application (Android/iOS)
+<!-- Jakarta Mail -->
+<dependency>
+  <groupId>com.sun.mail</groupId>
+  <artifactId>jakarta.mail</artifactId>
+  <version>2.0.1</version>
+</dependency>
 
-Health analytics dashboard using charting libraries
+<!-- Jakarta Activation -->
+<dependency>
+  <groupId>jakarta.activation</groupId>
+  <artifactId>jakarta.activation-api</artifactId>
+  <version>2.1.1</version>
+</dependency>
+
+<!-- MySQL Connector -->
+<dependency>
+  <groupId>mysql</groupId>
+  <artifactId>mysql-connector-java</artifactId>
+  <version>8.0.33</version>
+</dependency>
+
+<!-- JFreeChart -->
+<dependency>
+  <groupId>org.jfree</groupId>
+  <artifactId>jfreechart</artifactId>
+  <version>1.5.3</version>
+</dependency>
+
+<!-- PDFBox -->
+<dependency>
+  <groupId>org.apache.pdfbox</groupId>
+  <artifactId>pdfbox</artifactId>
+  <version>2.0.27</version>
+</dependency>
+
+<!-- dotenv-java -->
+<dependency>
+  <groupId>io.github.cdimascio</groupId>
+  <artifactId>dotenv-java</artifactId>
+  <version>2.2.4</version>
+</dependency>
+
+### Authors
+-Zayna Qasim
+-Iman Naeem
+-Shehryar Ali
+
+
