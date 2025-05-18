@@ -55,7 +55,7 @@ Make sure the following are installed:
 - [Apache Maven](https://maven.apache.org/download.cgi)
 - [MySQL Server](https://dev.mysql.com/downloads/mysql/)
 
-Verify installation:
+### Verify installation:
 ```bash
 java -version
 mvn -version
@@ -151,7 +151,7 @@ xml
   <artifactId>dotenv-java</artifactId>
   <version>2.2.4</version>
 </dependency>
-```bash
+```
 ### Authors
 1. Zayna Qasim
 2. Iman Naeem
