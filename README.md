@@ -4,7 +4,7 @@ The **Remote Health Monitoring System (RHMS)** is a Java-based desktop applicati
 
 ---
 
-## 🎥 Project Demo
+## � Project Demo
 
 📽️ [Click here to watch the demo video](https://drive.google.com/file/d/1_Z4883-4bn7Wy5HUKeP1XtepVf2mCoUE/view?usp=sharing)
 
@@ -56,23 +56,28 @@ Make sure the following are installed:
 - [MySQL Server](https://dev.mysql.com/downloads/mysql/)
 
 Verify installation:
+```bash
 java -version
 mvn -version
-
-### Setup Instructions
+Setup Instructions
 Follow these steps to set up and run the Remote Health Monitoring System (RHMS) on your local machine:
 
-1. Clone the Repository
-Open your terminal or command prompt and run:
+Clone the Repository
+
+bash
 git clone https://github.com/your-username/RemoteHealthMonitoringSystem.git
 cd RemoteHealthMonitoringSystem
-2. Configure MySQL Database
-Open MySQL Workbench or your preferred client.
-Create a new database, for example:
-CREATE DATABASE rhms_db;
-Create required tables and insert test data (refer to your database schema if needed).
+Configure MySQL Database
 
-3. Create .env File
+Open MySQL Workbench or your preferred client
+
+Create a new database:
+
+sql
+CREATE DATABASE rhms_db;
+Create required tables and insert test data (refer to your database schema if needed)
+
+Create .env File
 Create a file named .env in the root folder and add your configuration:
 
 DB_URL=jdbc:mysql://localhost:3306/rhms_db
@@ -87,17 +92,18 @@ EMAIL_USERNAME=your_email@gmail.com
 EMAIL_PASSWORD=your_email_app_password
 ⚠️ Make sure not to share or upload this .env file to GitHub. It contains sensitive credentials.
 
-4.  Build the Project
-Use Maven to clean and install dependencies:
+Build the Project
+
+bash
 mvn clean install
+Run the Application
 
-6.  Run the Application
-Execute the main class using Maven:
+bash
 mvn exec:java
-
-### Maven Dependencies
+Maven Dependencies
 The project uses the following Maven dependencies:
 
+xml
 <!-- Twilio (SMS alerts) -->
 <dependency>
   <groupId>com.twilio.sdk</groupId>
@@ -153,11 +159,9 @@ The project uses the following Maven dependencies:
   <artifactId>dotenv-java</artifactId>
   <version>2.2.4</version>
 </dependency>
+Authors
+Zayna Qasim
 
+Iman Naeem
 
-### Authors
--Zayna Qasim
--Iman Naeem
--Shehryar Ali
-
-
+Shehryar Ali
