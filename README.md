@@ -4,7 +4,7 @@ The **Remote Health Monitoring System (RHMS)** is a Java-based desktop applicati
 
 ---
 
-## � Project Demo
+## 🎥 Project Demo
 
 📽️ [Click here to watch the demo video](https://drive.google.com/file/d/1_Z4883-4bn7Wy5HUKeP1XtepVf2mCoUE/view?usp=sharing)
 
@@ -62,23 +62,18 @@ mvn -version
 Setup Instructions
 Follow these steps to set up and run the Remote Health Monitoring System (RHMS) on your local machine:
 
-Clone the Repository
-
-bash
+1. Clone the Repository
 git clone https://github.com/your-username/RemoteHealthMonitoringSystem.git
 cd RemoteHealthMonitoringSystem
-Configure MySQL Database
 
+2.Configure MySQL Database
 Open MySQL Workbench or your preferred client
-
 Create a new database:
-
-sql
 CREATE DATABASE rhms_db;
-Create required tables and insert test data (refer to your database schema if needed)
+Paste the database schema into it
 
-Create .env File
-Create a file named .env in the root folder and add your configuration:
+3. Create .env File
+Create a file named .env in the root folder with:
 
 DB_URL=jdbc:mysql://localhost:3306/rhms_db
 DB_USERNAME=root
@@ -90,7 +85,6 @@ TWILIO_PHONE_NUMBER=your_twilio_phone
 
 EMAIL_USERNAME=your_email@gmail.com
 EMAIL_PASSWORD=your_email_app_password
-⚠️ Make sure not to share or upload this .env file to GitHub. It contains sensitive credentials.
 
 Build the Project
 
@@ -101,8 +95,6 @@ Run the Application
 bash
 mvn exec:java
 Maven Dependencies
-The project uses the following Maven dependencies:
-
 xml
 <!-- Twilio (SMS alerts) -->
 <dependency>
@@ -153,15 +145,15 @@ xml
   <version>2.0.27</version>
 </dependency>
 
-<!-- dotenv-java (Environment variable loader) -->
+<!-- dotenv-java (Environment variables) -->
 <dependency>
   <groupId>io.github.cdimascio</groupId>
   <artifactId>dotenv-java</artifactId>
   <version>2.2.4</version>
 </dependency>
-Authors
-Zayna Qasim
+```bash
+### Authors
+1. Zayna Qasim
+2. Iman Naeem
+3. Shehryar Ali
 
-Iman Naeem
-
-Shehryar Ali
