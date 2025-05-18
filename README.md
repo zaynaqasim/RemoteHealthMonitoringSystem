@@ -402,11 +402,9 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-05-13  0:31:14
-
-
-Create .env File
+```
+### Create .env File
 Create a file named .env in the root folder with:
-
 DB_URL=jdbc:mysql://localhost:3306/rhms_db
 DB_USERNAME=root
 DB_PASSWORD=your_password
@@ -418,12 +416,14 @@ TWILIO_PHONE_NUMBER=your_twilio_phone
 EMAIL_USERNAME=your_email@gmail.com
 EMAIL_PASSWORD=your_email_app_password
 
-Build the Project
+### Build the Project
 mvn clean install
 
-Run the Application
+### Run the Application
 mvn exec:java
-Maven Dependencies
+
+### Maven Dependencies
+```bash
 xml
 <!-- Twilio (SMS alerts) -->
 <dependency>
@@ -481,6 +481,7 @@ xml
   <version>2.2.4</version>
 </dependency>
 ```
+
 ### Authors
 1. Zayna Qasim
 2. Iman Naeem
