@@ -12,8 +12,6 @@ The **Remote Health Monitoring System (RHMS)** is a Java-based desktop applicati
 
 ## 🖼️ GUI Screenshot
 
-> Replace this placeholder with your actual image after uploading it to your GitHub repo.
-
 ![GUI Screenshot](gui-screenshot.png)
 
 ---
