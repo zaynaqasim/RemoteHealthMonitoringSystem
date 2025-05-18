@@ -98,21 +98,21 @@ mvn exec:java
 ### Maven Dependencies
 The project uses the following Maven dependencies:
 
-<!-- Twilio -->
+<!-- Twilio (SMS alerts) -->
 <dependency>
   <groupId>com.twilio.sdk</groupId>
   <artifactId>twilio</artifactId>
   <version>9.11.0</version>
 </dependency>
 
-<!-- SLF4J Logging -->
+<!-- SLF4J (Logging) -->
 <dependency>
   <groupId>org.slf4j</groupId>
   <artifactId>slf4j-simple</artifactId>
   <version>2.0.9</version>
 </dependency>
 
-<!-- Jakarta Mail -->
+<!-- Jakarta Mail (Email sending) -->
 <dependency>
   <groupId>com.sun.mail</groupId>
   <artifactId>jakarta.mail</artifactId>
@@ -126,33 +126,34 @@ The project uses the following Maven dependencies:
   <version>2.1.1</version>
 </dependency>
 
-<!-- MySQL Connector -->
+<!-- MySQL JDBC Connector -->
 <dependency>
   <groupId>mysql</groupId>
   <artifactId>mysql-connector-java</artifactId>
   <version>8.0.33</version>
 </dependency>
 
-<!-- JFreeChart -->
+<!-- JFreeChart (Charts for vitals) -->
 <dependency>
   <groupId>org.jfree</groupId>
   <artifactId>jfreechart</artifactId>
   <version>1.5.3</version>
 </dependency>
 
-<!-- PDFBox -->
+<!-- Apache PDFBox (PDF generation) -->
 <dependency>
   <groupId>org.apache.pdfbox</groupId>
   <artifactId>pdfbox</artifactId>
   <version>2.0.27</version>
 </dependency>
 
-<!-- dotenv-java -->
+<!-- dotenv-java (Environment variable loader) -->
 <dependency>
   <groupId>io.github.cdimascio</groupId>
   <artifactId>dotenv-java</artifactId>
   <version>2.2.4</version>
 </dependency>
+
 
 ### Authors
 -Zayna Qasim
